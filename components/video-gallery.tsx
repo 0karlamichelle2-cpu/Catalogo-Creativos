@@ -44,10 +44,10 @@ export function VideoGallery() {
             Galería
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-foreground text-balance">
-            Algunos de nuestros proyectos
+            Nuestros proyectos
           </h2>
           <p className="text-text-secondary mt-4 max-w-xl text-sm sm:text-base leading-relaxed">
-            Explora nuestra galería de proyectos realizados y descubre la calidad y atención al detalle que nos caracteriza.
+            Aquí puedes ver algunos de los trabajos que hemos entregado — proyectos reales, terminados, de clientes reales. Cada uno refleja lo que hacemos y cómo lo hacemos.
           </p>
         </motion.div>
 

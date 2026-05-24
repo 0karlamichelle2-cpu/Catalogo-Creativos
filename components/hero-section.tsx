@@ -30,10 +30,10 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-medium text-white leading-[1.1] text-balance">
-                Diseño modular que transforma espacios
+                Espacios que hablan de ti
               </h1>
               <p className="mt-6 lg:mt-8 text-base sm:text-lg text-white/70 max-w-md leading-relaxed">
-                Creamos muebles únicos y personalizados que combinan funcionalidad, estética y la más alta calidad artesanal.
+                Diseñamos y fabricamos muebles modulares a medida, pensados para cada rincón de tu hogar o negocio. Cada pieza es única, construida con materiales de calidad y el respaldo de un equipo comprometido con cada detalle.
               </p>
             </motion.div>
 

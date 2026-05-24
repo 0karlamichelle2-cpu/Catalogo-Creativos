@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Instagram, Facebook } from 'lucide-react'
-import { contactInfo } from '@/lib/data'
+import { Instagram } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -52,30 +51,39 @@ export function Footer() {
               Contacto
             </h3>
             <ul className="space-y-4 text-sm text-white/60">
-              <li>{contactInfo.phone}</li>
-              <li>{contactInfo.email}</li>
-              <li>{contactInfo.address}</li>
+              <li>
+                <a 
+                  href="https://wa.me/573204095286" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  +57 320 409 5286
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.instagram.com/creativos.creativos" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  @creativos.creativos
+                </a>
+              </li>
+              <li>Sabana Norte — Tocancipá y alrededores</li>
             </ul>
             
             {/* Social Media */}
             <div className="flex gap-3 mt-8">
               <a
-                href={contactInfo.socialMedia.instagram}
+                href="https://www.instagram.com/creativos.creativos"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-white hover:bg-white hover:text-near-black transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href={contactInfo.socialMedia.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-white hover:bg-white hover:text-near-black transition-all duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
               </a>
             </div>
           </div>
