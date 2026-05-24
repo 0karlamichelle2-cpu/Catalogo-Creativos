@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* CREATIVOS estudio modular color palette */
+  /* Editorial furniture magazine palette */
   --background: #F5F5F0;
   --foreground: #1A1A1A;
   --card: #FFFFFF;
@@ -15,36 +15,38 @@
   --primary-foreground: #FFFFFF;
   --secondary: #FFFFFF;
   --secondary-foreground: #1A1A1A;
-  --muted: #E8E8E3;
-  --muted-foreground: #666666;
+  --muted: #F5F5F0;
+  --muted-foreground: #9A9A8E;
   --accent: #6B7C4E;
   --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #E0E0DB;
-  --input: #E0E0DB;
+  --border: #E8E8E2;
+  --input: #E8E8E2;
   --ring: #6B7C4E;
   --chart-1: #6B7C4E;
   --chart-2: #8A9B6A;
-  --chart-3: #4A5A35;
+  --chart-3: #4A5240;
   --chart-4: #1A1A1A;
   --chart-5: #333333;
-  --radius: 0.5rem;
+  --radius: 0rem;
   --sidebar: #FFFFFF;
   --sidebar-foreground: #1A1A1A;
   --sidebar-primary: #6B7C4E;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #F5F5F0;
   --sidebar-accent-foreground: #1A1A1A;
-  --sidebar-border: #E0E0DB;
+  --sidebar-border: #E8E8E2;
   --sidebar-ring: #6B7C4E;
 
   /* Custom colors */
   --olive: #6B7C4E;
   --olive-light: #8A9B6A;
-  --olive-dark: #4A5A35;
+  --olive-dark: #4A5240;
   --off-white: #F5F5F0;
   --near-black: #1A1A1A;
+  --text-secondary: #9A9A8E;
+  --border-subtle: #E8E8E2;
 }
 
 .dark {
@@ -122,6 +124,8 @@
   --color-olive-dark: var(--olive-dark);
   --color-off-white: var(--off-white);
   --color-near-black: var(--near-black);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-subtle: var(--border-subtle);
 }
 
 @layer base {
@@ -129,7 +133,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
 }
 
@@ -145,4 +149,12 @@
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+/* Snap scroll for video gallery */
+.snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+}
+.snap-start {
+  scroll-snap-align: start;
 }

@@ -19,25 +19,32 @@ export function CategoryCard({ category, index }: CategoryCardProps) {
       viewport={{ once: true }}
     >
       <Link href={`/catalogo/${category.slug}`} className="group block">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-muted">
-          <Image
-            src={category.image}
-            alt={category.name}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-          />
-          <div className="absolute inset-0 bg-olive/0 group-hover:bg-olive/40 transition-colors duration-500" />
-          <div className="absolute inset-0 flex flex-col justify-end p-6">
-            <div className="bg-secondary/90 backdrop-blur-sm p-4 rounded-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <h3 className="text-lg font-serif font-semibold text-foreground">
-                {category.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                {category.description}
-              </p>
-            </div>
+        <div className="bg-card p-4 sm:p-6 lg:p-8">
+          {/* Category label */}
+          <p className="text-[10px] sm:text-xs font-sans uppercase tracking-[0.2em] text-text-secondary mb-3 sm:mb-4">
+            Categoría
+          </p>
+          
+          {/* Image */}
+          <div className="relative aspect-[4/5] overflow-hidden bg-muted mb-4 sm:mb-6">
+            <Image
+              src={category.image}
+              alt={category.name}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
           </div>
+          
+          {/* Category name */}
+          <h3 className="text-lg sm:text-xl font-serif font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+            {category.name}
+          </h3>
+          
+          {/* Description */}
+          <p className="text-xs sm:text-sm text-text-secondary mt-2 line-clamp-2 leading-relaxed">
+            {category.description}
+          </p>
         </div>
       </Link>
     </motion.div>

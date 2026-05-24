@@ -43,8 +43,8 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
   }
 
   return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 sm:py-20 lg:py-24 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Form */}
           <motion.div
@@ -53,16 +53,19 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-balance">
+            <p className="text-xs font-sans uppercase tracking-[0.2em] text-text-secondary mb-3">
+              Contacto
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-foreground text-balance">
               Solicita tu cotización
             </h2>
-            <p className="text-muted-foreground mt-4 mb-8">
+            <p className="text-text-secondary mt-4 mb-8 text-sm sm:text-base leading-relaxed">
               Completa el formulario y nos pondremos en contacto contigo a través de WhatsApp para brindarte la mejor atención.
             </p>
 
             <form onSubmit={handleWhatsAppSubmit} className="space-y-5">
               <div>
-                <label htmlFor="nombre" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="nombre" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
                   Nombre completo
                 </label>
                 <input
@@ -72,13 +75,13 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
                   required
                   value={formData.nombre}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                  className="w-full px-4 py-3 min-h-12 border border-border-subtle bg-card text-foreground placeholder:text-text-secondary focus:outline-none focus:border-foreground transition-colors duration-300 text-sm sm:text-base"
                   placeholder="Tu nombre"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="email" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
                   Correo electrónico
                 </label>
                 <input
@@ -88,13 +91,13 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                  className="w-full px-4 py-3 min-h-12 border border-border-subtle bg-card text-foreground placeholder:text-text-secondary focus:outline-none focus:border-foreground transition-colors duration-300 text-sm sm:text-base"
                   placeholder="tu@email.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="telefono" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="telefono" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
                   Número de contacto (WhatsApp)
                 </label>
                 <input
@@ -104,13 +107,13 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
                   required
                   value={formData.telefono}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                  className="w-full px-4 py-3 min-h-12 border border-border-subtle bg-card text-foreground placeholder:text-text-secondary focus:outline-none focus:border-foreground transition-colors duration-300 text-sm sm:text-base"
                   placeholder="+57 300 123 4567"
                 />
               </div>
 
               <div>
-                <label htmlFor="ciudad" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="ciudad" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
                   Ciudad
                 </label>
                 <input
@@ -120,13 +123,13 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
                   required
                   value={formData.ciudad}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                  className="w-full px-4 py-3 min-h-12 border border-border-subtle bg-card text-foreground placeholder:text-text-secondary focus:outline-none focus:border-foreground transition-colors duration-300 text-sm sm:text-base"
                   placeholder="Tu ciudad"
                 />
               </div>
 
               <div>
-                <label htmlFor="producto" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="producto" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
                   Producto de interés
                 </label>
                 <select
@@ -135,7 +138,7 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
                   required
                   value={formData.producto}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-secondary text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                  className="w-full px-4 py-3 min-h-12 border border-border-subtle bg-card text-foreground focus:outline-none focus:border-foreground transition-colors duration-300 text-sm sm:text-base"
                 >
                   <option value="">Selecciona una categoría</option>
                   {categories.map(cat => (
@@ -145,7 +148,7 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
               </div>
 
               <div>
-                <label htmlFor="mensaje" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="mensaje" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
                   Mensaje adicional
                 </label>
                 <textarea
@@ -154,16 +157,16 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
                   rows={4}
                   value={formData.mensaje}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 border border-border-subtle bg-card text-foreground placeholder:text-text-secondary focus:outline-none focus:border-foreground transition-colors duration-300 resize-none text-sm sm:text-base"
                   placeholder="Cuéntanos más sobre tu proyecto..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-3 py-4 px-6 text-base font-medium bg-[#25D366] text-white rounded-full hover:bg-[#128C7E] transition-colors duration-300"
+                className="w-full flex items-center justify-center gap-3 py-4 px-6 min-h-12 text-sm font-sans font-medium uppercase tracking-[0.15em] bg-[#25D366] text-white hover:bg-[#128C7E] transition-colors duration-300"
               >
-                <Send className="w-5 h-5" />
+                <Send className="w-4 h-4" />
                 Enviar por WhatsApp
               </button>
             </form>
@@ -175,53 +178,56 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="lg:pt-20"
+            className="lg:pt-16"
           >
-            <div className="bg-secondary rounded-2xl p-8 md:p-10">
-              <h3 className="text-xl font-serif font-semibold text-foreground mb-6">
-                Información de contacto
+            <div className="bg-card border border-border-subtle p-6 sm:p-8 lg:p-10">
+              <p className="text-xs font-sans uppercase tracking-[0.2em] text-text-secondary mb-3">
+                Información
+              </p>
+              <h3 className="text-xl sm:text-2xl font-serif font-medium text-foreground mb-8">
+                Datos de contacto
               </h3>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-olive" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 border border-border-subtle flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-muted-foreground">Teléfono</p>
-                    <p className="text-base text-foreground mt-1">{contactInfo.phone}</p>
+                    <p className="text-xs font-sans uppercase tracking-[0.15em] text-text-secondary">Teléfono</p>
+                    <p className="text-sm sm:text-base text-foreground mt-1">{contactInfo.phone}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-olive" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 border border-border-subtle flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-muted-foreground">Correo electrónico</p>
-                    <p className="text-base text-foreground mt-1">{contactInfo.email}</p>
+                    <p className="text-xs font-sans uppercase tracking-[0.15em] text-text-secondary">Correo electrónico</p>
+                    <p className="text-sm sm:text-base text-foreground mt-1">{contactInfo.email}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-olive" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 border border-border-subtle flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-muted-foreground">Dirección</p>
-                    <p className="text-base text-foreground mt-1">{contactInfo.address}</p>
+                    <p className="text-xs font-sans uppercase tracking-[0.15em] text-text-secondary">Dirección</p>
+                    <p className="text-sm sm:text-base text-foreground mt-1">{contactInfo.address}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-10 pt-8 border-t border-border">
-                <h4 className="text-base font-medium text-foreground mb-4">
+              <div className="mt-10 pt-8 border-t border-border-subtle">
+                <p className="text-xs font-sans uppercase tracking-[0.15em] text-text-secondary mb-4">
                   Horario de atención
-                </h4>
-                <div className="space-y-2 text-sm text-muted-foreground">
+                </p>
+                <div className="space-y-2 text-sm text-foreground">
                   <p>Lunes - Viernes: 8:00 AM - 6:00 PM</p>
                   <p>Sábados: 9:00 AM - 2:00 PM</p>
-                  <p>Domingos y festivos: Cerrado</p>
+                  <p className="text-text-secondary">Domingos y festivos: Cerrado</p>
                 </div>
               </div>
             </div>

@@ -50,30 +50,33 @@ function CategoryContent({ category, projects }: CategoryContentProps) {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background">
       <Navbar />
       
-      <section className="pt-32 pb-20 bg-background">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/catalogo" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 mb-8"
+            className="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.15em] text-text-secondary hover:text-foreground transition-colors duration-300 mb-8 min-h-12 py-2"
           >
             <ArrowLeft className="w-4 h-4" />
             Volver al catálogo
           </Link>
 
-          <div className="max-w-2xl mb-12">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground text-balance">
+          <div className="max-w-2xl mb-10 sm:mb-12 lg:mb-16">
+            <p className="text-xs font-sans uppercase tracking-[0.2em] text-text-secondary mb-3">
+              Categoría
+            </p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-foreground text-balance">
               {category.name}
             </h1>
-            <p className="text-muted-foreground mt-4 text-lg">
+            <p className="text-text-secondary mt-4 text-sm sm:text-base lg:text-lg leading-relaxed">
               {category.description}
             </p>
           </div>
 
           {projects.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {projects.map((project, index) => (
                 <ProductCard
                   key={project.id}
@@ -84,13 +87,13 @@ function CategoryContent({ category, projects }: CategoryContentProps) {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg">
+            <div className="text-center py-16 sm:py-20">
+              <p className="text-text-secondary text-sm sm:text-base lg:text-lg">
                 Próximamente añadiremos proyectos a esta categoría.
               </p>
               <Link
                 href="/cotizacion"
-                className="inline-flex items-center justify-center gap-2 mt-6 px-6 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-full hover:bg-olive-dark transition-colors duration-300"
+                className="inline-flex items-center justify-center gap-2 mt-6 px-8 py-4 text-sm font-sans font-medium uppercase tracking-[0.15em] border border-foreground text-foreground hover:bg-foreground hover:text-card transition-all duration-300 min-h-12"
               >
                 Solicitar Cotización Personalizada
               </Link>

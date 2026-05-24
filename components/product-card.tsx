@@ -20,31 +20,33 @@ export function ProductCard({ project, index, onClick }: ProductCardProps) {
     >
       <button
         onClick={onClick}
-        className="group block w-full text-left"
+        className="group block w-full text-left bg-card p-4 sm:p-6 min-h-12"
       >
-        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-muted">
+        {/* Category label */}
+        <p className="text-[10px] sm:text-xs font-sans uppercase tracking-[0.2em] text-text-secondary mb-3 sm:mb-4">
+          Proyecto
+        </p>
+        
+        {/* Image */}
+        <div className="relative aspect-[4/3] overflow-hidden bg-muted mb-4 sm:mb-6">
           <Image
             src={project.image}
             alt={project.name}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-near-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-primary text-primary-foreground rounded-full">
-              Ver detalles
-            </span>
-          </div>
         </div>
-        <div className="mt-4">
-          <h3 className="text-base font-serif font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-            {project.name}
-          </h3>
-          <p className="text-sm text-muted-foreground mt-1">
-            {project.location}
-          </p>
-        </div>
+        
+        {/* Product name */}
+        <h3 className="text-base sm:text-lg font-serif font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+          {project.name}
+        </h3>
+        
+        {/* Location */}
+        <p className="text-xs sm:text-sm text-text-secondary mt-1">
+          {project.location}
+        </p>
       </button>
     </motion.div>
   )
