@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
@@ -17,13 +18,15 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-secondary/80 backdrop-blur-md border-b border-border">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex flex-col">
-          <span className="text-xl font-serif font-bold tracking-tight text-foreground">
-            CREATIVOS
-          </span>
-          <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">
-            estudio modular
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="CREATIVOS estudio modular"
+            width={120}
+            height={40}
+            className="h-8 w-auto md:h-10"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
