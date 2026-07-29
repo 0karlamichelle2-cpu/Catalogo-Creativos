@@ -30,56 +30,56 @@ export const categories: Category[] = [
     name: 'Cocinas',
     slug: 'cocinas',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
-    description: 'Cocinas modulares diseñadas para optimizar cada espacio'
+    description: 'Diseños funcionales y modernos que aprovechan cada espacio de tu cocina.'
   },
   {
     id: '2',
     name: 'Escritorios',
     slug: 'escritorios',
     image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80',
-    description: 'Espacios de trabajo funcionales y elegantes'
+    description: 'Espacios de trabajo a tu medida, cómodos y con estilo.'
   },
   {
     id: '3',
     name: 'Closets',
     slug: 'closets',
     image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80',
-    description: 'Soluciones de almacenamiento personalizadas'
+    description: 'Organización inteligente para tu ropa y accesorios, adaptada a tu habitación.'
   },
   {
     id: '4',
-    name: 'Centros de Entretenimiento',
+    name: 'Centros de entretenimiento',
     slug: 'centros-entretenimiento',
     image: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&q=80',
-    description: 'Diseños modernos para tu sala de estar'
+    description: 'Muebles pensados para tu sala, TV y sistema de sonido en un solo lugar.'
   },
   {
     id: '5',
     name: 'Recibidores',
     slug: 'recibidores',
     image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-    description: 'Primera impresión con estilo'
+    description: 'La primera impresión de tu hogar, con funcionalidad y elegancia.'
   },
   {
     id: '6',
-    name: 'Barras de Cocina',
+    name: 'Barras de cocina',
     slug: 'barras-cocina',
     image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80',
-    description: 'Espacios para compartir y disfrutar'
+    description: 'El punto de encuentro perfecto para comer, socializar o trabajar.'
   },
   {
     id: '7',
-    name: 'Baños',
+    name: 'Muebles de baño',
     slug: 'banos',
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80',
-    description: 'Mobiliario de baño con diseño premium'
+    description: 'Soluciones de almacenamiento que combinan estilo y resistencia a la humedad.'
   },
   {
     id: '8',
-    name: 'Salas Modulares',
-    slug: 'salas-modulares',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-    description: 'Confort y versatilidad en cada pieza'
+    name: 'Repisas',
+    slug: 'repisas',
+    image: 'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&q=80',
+    description: 'Almacenamiento versátil para cualquier rincón de tu casa.'
   }
 ]
 
@@ -201,16 +201,16 @@ export const projects: Project[] = [
     material: 'MDF resistente a humedad',
     dimensions: '1.2m x 0.5m x 0.55m'
   },
-  // Salas Modulares
+  // Repisas
   {
     id: 's1',
     categoryId: '8',
-    name: 'Sistema Modular Sala',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
+    name: 'Repisas Flotantes de Roble',
+    image: 'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&q=80',
     location: 'Medellín, Colombia',
-    colors: ['Gris', 'Verde oliva'],
-    material: 'Tela premium + Espuma HD',
-    dimensions: '3.2m x 1.0m x 0.85m'
+    colors: ['Roble natural', 'Verde oliva'],
+    material: 'Madera de roble + Soportes ocultos',
+    dimensions: '1.2m x 0.25m x 0.04m'
   }
 ]
 
