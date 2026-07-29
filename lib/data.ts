@@ -248,10 +248,9 @@ export const videoProjects: VideoProject[] = [
 ]
 
 export const contactInfo = {
-  phone: '+57 300 123 4567',
-  email: 'info@creativosestudio.com',
-  address: 'Calle 100 #15-20, Bogotá, Colombia',
-  whatsappNumber: '573001234567',
+  phone: '+57 320 409 5286',
+  address: 'Tocancipá, Cundinamarca',
+  whatsappNumber: '573204095286',
   socialMedia: {
     instagram: 'https://instagram.com/creativosestudio',
     facebook: 'https://facebook.com/creativosestudio',

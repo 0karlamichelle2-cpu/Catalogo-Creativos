@@ -2,16 +2,17 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send, Phone, Mail, MapPin } from 'lucide-react'
+import { Send, Phone, MapPin } from 'lucide-react'
 import { categories, contactInfo } from '@/lib/data'
 
 export function QuoteForm() {
   const [formData, setFormData] = useState({
     nombre: '',
-    email: '',
     telefono: '',
     ciudad: '',
     producto: '',
+    medidas: '',
+    presupuesto: '',
     mensaje: ''
   })
 
@@ -25,17 +26,14 @@ export function QuoteForm() {
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
-    const message = `¡Hola! Mi nombre es ${formData.nombre}.
-
-📧 Correo: ${formData.email}
-📱 Teléfono: ${formData.telefono}
-📍 Ciudad: ${formData.ciudad}
-🪑 Producto de interés: ${formData.producto}
-
-💬 Mensaje adicional:
-${formData.mensaje || 'Sin mensaje adicional'}
-
-Me gustaría recibir más información y una cotización. ¡Gracias!`
+    const message = `Hola, quiero solicitar una cotización con CREATIVOS estudio modular:
+- Nombre: ${formData.nombre}
+- Tipo de mueble: ${formData.producto}
+- Medidas: ${formData.medidas || 'No especificadas'}
+- Presupuesto: ${formData.presupuesto || 'No especificado'}
+- Teléfono: ${formData.telefono}
+- Ciudad: ${formData.ciudad}
+- Comentarios: ${formData.mensaje || 'Sin comentarios'}`
 
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${contactInfo.whatsappNumber}?text=${encodedMessage}`
@@ -77,22 +75,6 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
                   onChange={handleChange}
                   className="w-full px-4 py-3 min-h-12 border border-border-subtle bg-card text-foreground placeholder:text-text-secondary focus:outline-none focus:border-foreground transition-colors duration-300 text-sm sm:text-base"
                   placeholder="Tu nombre"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
-                  Correo electrónico
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 min-h-12 border border-border-subtle bg-card text-foreground placeholder:text-text-secondary focus:outline-none focus:border-foreground transition-colors duration-300 text-sm sm:text-base"
-                  placeholder="tu@email.com"
                 />
               </div>
 
@@ -148,8 +130,38 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
               </div>
 
               <div>
+                <label htmlFor="medidas" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
+                  Medidas aproximadas
+                </label>
+                <input
+                  type="text"
+                  id="medidas"
+                  name="medidas"
+                  value={formData.medidas}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 min-h-12 border border-border-subtle bg-card text-foreground placeholder:text-text-secondary focus:outline-none focus:border-foreground transition-colors duration-300 text-sm sm:text-base"
+                  placeholder="Ej: 2.5m x 0.6m x 2.4m"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="presupuesto" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
+                  Presupuesto estimado
+                </label>
+                <input
+                  type="text"
+                  id="presupuesto"
+                  name="presupuesto"
+                  value={formData.presupuesto}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 min-h-12 border border-border-subtle bg-card text-foreground placeholder:text-text-secondary focus:outline-none focus:border-foreground transition-colors duration-300 text-sm sm:text-base"
+                  placeholder="Ej: $2.000.000 COP"
+                />
+              </div>
+
+              <div>
                 <label htmlFor="mensaje" className="block text-xs font-sans uppercase tracking-[0.15em] text-foreground mb-2">
-                  Mensaje adicional
+                  Comentarios adicionales
                 </label>
                 <textarea
                   id="mensaje"
@@ -196,16 +208,6 @@ Me gustaría recibir más información y una cotización. ¡Gracias!`
                   <div>
                     <p className="text-xs font-sans uppercase tracking-[0.15em] text-text-secondary">Teléfono</p>
                     <p className="text-sm sm:text-base text-foreground mt-1">{contactInfo.phone}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 border border-border-subtle flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-sans uppercase tracking-[0.15em] text-text-secondary">Correo electrónico</p>
-                    <p className="text-sm sm:text-base text-foreground mt-1">{contactInfo.email}</p>
                   </div>
                 </div>
 
